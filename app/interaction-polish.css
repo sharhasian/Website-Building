@@ -1,0 +1,59 @@
+/* Premium motion and interaction pass — restrained editorial choreography */
+::selection{background:rgba(201,146,78,.32);color:#fff}
+html{scroll-padding-top:92px}
+a,button,input,select,textarea{transition:color .28s ease,border-color .28s ease,background-color .28s ease,opacity .28s ease,transform .28s ease,box-shadow .28s ease}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
+.nav{transition:background .35s ease,border-color .35s ease;box-shadow:0 14px 45px rgba(0,0,0,.16)}
+.nav::after{content:"";position:absolute;left:3vw;right:3vw;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,146,78,.4),transparent);transform:scaleX(.35);opacity:.45;transition:transform .5s ease,opacity .5s ease}
+.nav:hover::after{transform:scaleX(1);opacity:.9}
+.nav nav a,.navCta,.heroActions a,.institutionList a,.journalHeader a{position:relative}
+.nav nav a::after,.heroActions a::after,.institutionList a::after,.journalHeader a::after{content:"";position:absolute;left:0;right:100%;bottom:-.45rem;height:1px;background:var(--gold);transition:right .32s ease}
+.nav nav a:hover::after,.heroActions a:hover::after,.institutionList a:hover::after,.journalHeader a:hover::after{right:0}
+.heroMedia{transform:scale(1.025);animation:heroBreathe 18s ease-in-out infinite alternate;will-change:transform}
+.heroCopy{animation:heroReveal 1.15s cubic-bezier(.2,.7,.2,1) both}
+.hero .issue{animation:heroReveal .85s .1s cubic-bezier(.2,.7,.2,1) both}
+.hero h1{animation:heroReveal 1.1s .18s cubic-bezier(.2,.7,.2,1) both}
+.hero .dek{animation:heroReveal 1.1s .3s cubic-bezier(.2,.7,.2,1) both}
+.heroActions{animation:heroReveal 1.1s .42s cubic-bezier(.2,.7,.2,1) both}
+.vertical{animation:verticalFloat 5s ease-in-out infinite}
+.opening,.markets,.principles,.ecosystem,.journal,.contact,.axis{isolation:isolate}
+.opening::after,.markets::after,.principles::after,.ecosystem::after,.journal::after,.contact::after{pointer-events:none}
+.bodyCopy .lead::first-letter{font-family:var(--serif);font-size:4.2rem;line-height:.75;float:left;margin:.12em .16em 0 0;color:var(--gold)}
+.portrait,.quoteImage,.storyImg{transition:transform 1.1s cubic-bezier(.2,.7,.2,1),filter .7s ease}
+.portraitBand:hover .portrait,.editorialQuote:hover .quoteImage{transform:scale(1.025)}
+.storyImg:hover{transform:scale(1.018);filter:saturate(.85) contrast(1.08)}
+.axisMark{animation:axisPulse 4.8s ease-in-out infinite}
+.orb{position:relative;animation:orbFloat 7s ease-in-out infinite}
+.orb::before,.orb::after{content:"";position:absolute;inset:-24px;border:1px solid rgba(201,146,78,.16);border-radius:50%;animation:orbitSpin 18s linear infinite}
+.orb::after{inset:-48px;border-style:dashed;opacity:.55;animation-duration:30s;animation-direction:reverse}
+.axisRail b{transition:color .3s ease,transform .3s ease,text-shadow .3s ease}
+.axisRail b:hover{color:#fff;transform:translateX(4px);text-shadow:0 0 16px rgba(201,146,78,.7)}
+.axisRail.right b:hover{transform:translateX(-4px)}
+.principleList article,.institutionList article{position:relative;transition:padding-left .38s ease,background .38s ease,border-color .38s ease}
+.principleList article::before,.institutionList article::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);transform:scaleY(0);transform-origin:center;transition:transform .38s ease}
+.principleList article:hover,.institutionList article:hover{padding-left:1rem;background:linear-gradient(90deg,rgba(201,146,78,.055),transparent 65%);border-color:rgba(201,146,78,.52)}
+.principleList article:hover::before,.institutionList article:hover::before{transform:scaleY(1)}
+.marketGrid article,.stories article{overflow:hidden}
+.marketGrid article:hover h3,.stories article:hover h3{color:#fff}
+.contact input:focus,.contact select:focus,.contact textarea:focus{border-color:var(--gold);box-shadow:0 12px 28px -24px rgba(201,146,78,.95)}
+.contact button:hover{color:#fff;transform:translateX(6px)}
+.footerNetwork a:hover{transform:translateX(4px)}
+.networkFooter::after{content:"";position:absolute;left:6vw;right:6vw;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.45;animation:footerSignal 6s ease-in-out infinite}
+@keyframes heroReveal{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@keyframes heroBreathe{from{transform:scale(1.025)}to{transform:scale(1.065)}}
+@keyframes verticalFloat{0%,100%{transform:translateY(-5px);opacity:.72}50%{transform:translateY(6px);opacity:1}}
+@keyframes axisPulse{0%,100%{box-shadow:0 0 0 rgba(201,146,78,0)}50%{box-shadow:0 0 34px rgba(201,146,78,.2)}}
+@keyframes orbFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes orbitSpin{to{transform:rotate(360deg)}}
+@keyframes footerSignal{0%,100%{transform:scaleX(.25);opacity:.18}50%{transform:scaleX(1);opacity:.6}}
+@media(max-width:900px){
+  .nav{height:68px;padding-inline:1.25rem}.nav::after{left:1.25rem;right:1.25rem}
+  .navCta{font-size:.54rem!important}.heroActions{gap:1.2rem;flex-wrap:wrap}
+  .principleList article:hover,.institutionList article:hover{padding-left:.5rem}
+  .networkFooter::after{left:1.25rem;right:1.25rem}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;transition-delay:0ms!important}
+  .heroMedia,.portraitBand:hover .portrait,.editorialQuote:hover .quoteImage,.storyImg:hover{transform:none!important}
+}
