@@ -14,13 +14,20 @@ const principles = [
   ["05", "Legacy", "Build systems capable of outlasting the moment."],
 ];
 
+const marketDisciplines = [
+  ["Macro", "Read growth, inflation, liquidity, policy and currency conditions as one connected environment."],
+  ["Cross-asset", "Interpret equities, futures, commodities and currencies through relationships rather than isolated charts."],
+  ["Risk", "Protect optionality through position sizing, scenario planning and disciplined exposure management."],
+  ["Behavior", "Understand how incentives, emotion and crowd psychology distort judgment when pressure is highest."],
+];
+
 export default function Home() {
   return (
     <>
       <header className="nav">
         <a className="brand" href="#top">SHAHRIAR M. HASIAN</a>
         <nav aria-label="Primary navigation">
-          <a href="#story">Founder</a><a href="#axis">AXIS</a><a href="#ecosystem">Ecosystem</a><a href="#journal">Journal</a>
+          <a href="#story">Founder</a><a href="#markets">Markets</a><a href="#axis">AXIS</a><a href="#ecosystem">Ecosystem</a>
         </nav>
         <a className="navCta" href="#contact">Private inquiry</a>
       </header>
@@ -55,8 +62,18 @@ export default function Home() {
           <div className="portraitText"><span>THE BUILDER</span><h2>Not a personality brand.<br />A body of work.</h2><p>Each company is designed as part of a larger system: intelligence, infrastructure, capital, creativity and execution working in alignment.</p></div>
         </section>
 
+        <section className="markets" id="markets">
+          <p className="sectionNo">02 / FINANCIAL MARKETS</p>
+          <div className="marketsLead">
+            <h2>Markets as a discipline.<br /><em>Not a spectacle.</em></h2>
+            <div><p className="lead">Nearly two decades across global markets shaped a simple conviction: information alone is never the edge.</p><p>The advantage is created through interpretation, emotional control, risk architecture and the patience to wait until opportunity and responsibility align. The work spans currencies, equities, futures and commodities, supported by macroeconomic research, market structure and behavioral analysis.</p></div>
+          </div>
+          <div className="marketGrid">{marketDisciplines.map(([title,text],index)=><article key={title}><span>0{index+1}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
+          <div className="marketLine"><span>CAPITAL</span><i /><span>CONTEXT</span><i /><span>RISK</span><i /><span>EXECUTION</span></div>
+        </section>
+
         <section className="axis" id="axis">
-          <p className="sectionNo">02 / THE FLAGSHIP</p>
+          <p className="sectionNo">03 / THE FLAGSHIP</p>
           <div className="axisTop"><div><span className="axisMark">A</span><h2>AXIS</h2></div><p>Cognitive OS™</p></div>
           <div className="axisStatement">A private intelligence environment designed to strengthen context, judgment and disciplined execution.</div>
           <div className="axisVisual">
@@ -68,13 +85,13 @@ export default function Home() {
         </section>
 
         <section className="principles">
-          <p className="sectionNo">03 / THE OPERATING STANDARD</p>
+          <p className="sectionNo">04 / THE OPERATING STANDARD</p>
           <h2>The principles behind every institution.</h2>
           <div className="principleList">{principles.map(([n,t,d])=><article key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p></article>)}</div>
         </section>
 
         <section className="ecosystem" id="ecosystem">
-          <p className="sectionNo">04 / THE ECOSYSTEM</p>
+          <p className="sectionNo">05 / THE ECOSYSTEM</p>
           <div className="ecosystemIntro"><h2>One vision.<br />Multiple institutions.</h2><p>Catalyst Alpha Group Holdings is being shaped as the parent architecture for a portfolio of focused companies. Each has a distinct role. Together, they form a system.</p></div>
           <div className="institutionList">{institutions.map(([name,text],i)=><article key={name}><span>0{i+1}</span><h3>{name}</h3><p>{text}</p><a href="#contact">Explore</a></article>)}</div>
         </section>
@@ -85,7 +102,7 @@ export default function Home() {
         </section>
 
         <section className="journal" id="journal">
-          <p className="sectionNo">05 / FOUNDER&apos;S JOURNAL</p>
+          <p className="sectionNo">06 / FOUNDER&apos;S JOURNAL</p>
           <div className="journalHeader"><h2>Ideas worth returning to.</h2><a href="#contact">View the journal</a></div>
           <div className="stories">
             <article className="feature"><div className="storyImg one"/><span>STRATEGY</span><h3>The discipline of building before the world understands.</h3><p>Why private conviction, patient systems and quiet execution matter more than noise.</p></article>
@@ -95,7 +112,7 @@ export default function Home() {
         </section>
 
         <section className="contact" id="contact">
-          <div><p className="sectionNo">06 / PRIVATE INQUIRY</p><h2>Serious conversations.<br />Built with discretion.</h2><p>For institutional partnerships, private-client conversations, strategic collaborations and selected media inquiries.</p></div>
+          <div><p className="sectionNo">07 / PRIVATE INQUIRY</p><h2>Serious conversations.<br />Built with discretion.</h2><p>For institutional partnerships, private-client conversations, strategic collaborations and selected media inquiries.</p><div className="contactNote"><span>Private office</span><p>Every inquiry is reviewed for relevance, alignment and appropriate next steps.</p></div></div>
           <form action="mailto:support@cag-holdings.com" method="post" encType="text/plain">
             <label>Name<input name="name" required /></label>
             <label>Email<input type="email" name="email" required /></label>
@@ -107,7 +124,11 @@ export default function Home() {
         </section>
       </main>
 
-      <footer><div className="brand">SHAHRIAR M. HASIAN</div><p>Founder headquarters for the Catalyst network.</p><div><a href="#axis">AXIS</a><a href="#ecosystem">Ecosystem</a><a href="#contact">Contact</a></div><small>© 2026. All rights reserved.</small></footer>
+      <footer className="networkFooter">
+        <div className="footerStatement"><span>FOUNDER HEADQUARTERS</span><h2>Build what<br />endures.</h2><p>The public headquarters of Shahriar M. Hasian and the Catalyst network.</p></div>
+        <div className="footerNetwork"><div><h3>Intelligence</h3><a href="#axis">AXIS</a><span>CE Technologies</span></div><div><h3>Capital & Enterprise</h3><span>Catalyst Alpha Group</span><span>Catalyst Empire FZCO</span></div><div><h3>Creative & Development</h3><span>Catalyst Monarch</span><span>Catalyst Empire Developments</span></div></div>
+        <div className="footerLegal"><span>© 2026 Shahriar M. Hasian</span><span>Founder Headquarters · Catalyst Network</span><a href="#top">Return to top ↑</a></div>
+      </footer>
     </>
   );
 }
